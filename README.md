@@ -2,16 +2,16 @@
 
 <img src="logo.svg" height="210px" align="right"/>
 
-An opinionated template for NodeJS projects that includes, out of the box:
-
 [![Build Status][devops-shield]][devops-url] [![Code Coverage][codecov-shield]][codecov-url] [![Code Quality][lgtm-shield]][lgtm-url]
 
-- Unit testing with AVA
-- Code coverage on Codecov
-- Docker image
-- Good-looking API documentation with JSDoc
-- ESLint rules for both code (ES2018) and tests
-- CI/CD pipeline on Azure DevOps with:
+An opinionated template for NodeJS projects that includes, out of the box:
+
+- Unit testing with __AVA__
+- Code coverage on __Codecov__
+- __Docker__ image
+- Good-looking API documentation with __JSDoc__
+- __ESLint__ rules for both code (_ES2018_) and tests
+- CI/CD pipeline on __Azure DevOps__ with:
     - Test execution and coverage report upload
     - Documentation assets upload to public S3 bucket
     - Docker image push to DockerHub
