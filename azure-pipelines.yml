@@ -15,6 +15,11 @@ trigger:
       - v*
 
 
+  paths:
+    exclude:
+      - README.md
+
+
 jobs:
   - job: Test
     pool:
