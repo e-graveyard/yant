@@ -1,6 +1,6 @@
 # Yet Another NodeJS Template
 
-<img src="docs/logo.svg" height="210px" align="right"/>
+<img src="logo.svg" height="210px" align="right"/>
 
 An opinionated template for NodeJS projects that includes, out of the box:
 
@@ -17,7 +17,7 @@ An opinionated template for NodeJS projects that includes, out of the box:
     - Docker image push to DockerHub
 
 [devops-shield]: https://img.shields.io/azure-devops/build/caiertl/6b8362d8-2849-47c8-8720-1215a3f121c3/3.svg?style=for-the-badge
-[travis-url]: https://dev.azure.com/caiertl/yant/_build
+[devops-url]: https://dev.azure.com/caiertl/yant/_build
 
 [codecov-shield]: https://img.shields.io/codecov/c/github/caian-org/yant.svg?style=for-the-badge
 [codecov-url]: https://codecov.io/gh/caian-org/yant
@@ -28,7 +28,7 @@ An opinionated template for NodeJS projects that includes, out of the box:
 
 ## Who is it for?
 
-Primarily, me. These _~features~_ are stuff that I've been sparsely using on my
+Primarily, me. These _features_ are stuff that I've been sparsely using on my
 private and public projects. It's better to just compile everything into
 something ready-to-be-used.
 
