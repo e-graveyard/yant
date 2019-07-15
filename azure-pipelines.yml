@@ -1,0 +1,96 @@
+variables:
+  vmImageName: ubuntu-latest
+  docArtifactDir: documentation-assets
+  docArtifactObj: 'docs_$(Build.BuildId).zip'
+
+
+trigger:
+  branches:
+    include:
+      - master
+      - dev
+
+  tags:
+    include:
+      - v*
+
+
+jobs:
+  - job: Test
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+      - template: .ci/templates/node-with-modules.yml
+
+      - template: .ci/templates/test.yml
+        parameters:
+          codecovToken: '$(codecovToken)'
+
+      - task: Bash@3
+        displayName: Generate documentation static files
+        inputs:
+          targetType: filePath
+          filePath: .ci/jsdoc.sh
+        env:
+          documentationArtifactObject: '$(Build.ArtifactStagingDirectory)/$(docArtifactObj)'
+
+      - task: PublishBuildArtifacts@1
+        displayName: Publish artifact
+        inputs:
+          pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          artifactName: '$(docArtifactDir)'
+
+  - job: Documentation
+    pool:
+      vmImage: $(vmImageName)
+    dependsOn:
+      - Test
+    condition: |
+      and
+      (
+        in(dependencies.Test.result, 'Succeeded'),
+        startsWith(variables['Build.SourceBranch'], 'refs/tags/v')
+      )
+
+    steps:
+      - task: DownloadBuildArtifacts@0
+        displayName: Download artifact
+        inputs:
+          buildType: current
+          downloadType: single
+          artifactName: documentation-assets
+          downloadPath: '$(System.ArtifactsDirectory)'
+
+      - task: Bash@3
+        displayName: Update documentation
+        inputs:
+          targetType: filePath
+          filePath: .ci/s3.sh
+        env:
+          s3Bucket: s3://yant
+          accessKey: '$(awsAccessKeyId)'
+          secretKey: '$(awsSecretAccessKey)'
+          artifactDir: '$(System.ArtifactsDirectory)/$(docArtifactDir)'
+          artifactObj: '$(docArtifactObj)'
+
+  - job: Push
+    pool:
+      vmImage: $(vmImageName)
+    dependsOn:
+      - Test
+    condition: |
+      and
+      (
+        in(dependencies.Test.result, 'Succeeded'),
+        startsWith(variables['Build.SourceBranch'], 'refs/tags/v')
+      )
+
+    steps:
+      - task: Bash@3
+        displayName: Create and push the Docker image
+        inputs:
+          targetType: filePath
+          filePath: .ci/docker.sh
+        env:
+          imageName: caian/yant
+          dockerHubPassword: '$(dockerHubPassword)'

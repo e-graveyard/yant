@@ -1,0 +1,27 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc"]
+    },
+    "source": {
+        "include": ["src", "README.md"],
+        "includePattern": ".js$"
+    },
+    "plugins": [
+        "plugins/markdown",
+        "plugins/summarize"
+    ],
+    "templates": {
+        "systemName": "Calculator",
+        "theme": "lumen",
+        "navType": "vertical",
+        "collapseSymbols": true
+    },
+    "opts": {
+        "destination": "./docs/",
+        "encoding": "utf8",
+        "private": true,
+        "recurse": true,
+        "template": "./node_modules/ink-docstrap/template"
+    }
+}

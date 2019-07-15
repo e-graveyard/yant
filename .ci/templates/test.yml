@@ -1,0 +1,21 @@
+parameters:
+  # what kind of test should be executed?
+  # possible options: 'unit'
+  kind: 'unit'
+
+  # the codecov token used to upload coverage reports
+  codecovToken: ''
+
+
+steps:
+  - ${{ if eq(parameters.kind, 'unit') }}:
+    - script: npm run test:unit
+      displayName: Run unit tests
+
+    - script: npm run coverage:report
+      displayName: Generate test coverage report
+
+    - script: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
+      env:
+        CODECOV_TOKEN: ${{ parameters.codecovToken }}
+      displayName: Upload report to Codecov
