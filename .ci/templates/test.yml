@@ -10,12 +10,9 @@ parameters:
 steps:
   - ${{ if eq(parameters.kind, 'unit') }}:
     - script: npm run test:unit
-      displayName: Run unit tests
+      displayName: Run unit tests with coverage
 
     - script: npm run coverage:report
-      displayName: Generate test coverage report
-
-    - script: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
       env:
         CODECOV_TOKEN: ${{ parameters.codecovToken }}
       displayName: Upload report to Codecov
