@@ -3,7 +3,7 @@
 # get latest tag
 tag="$(git tag | tail -n 1)"
 
-# caian/arch-texlive:latest && vX.Y.Z
+# caian/yant:latest && vX.Y.Z
 latest="$imageName:latest"
 tagged="$imageName:$tag"
 
