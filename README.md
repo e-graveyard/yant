@@ -17,8 +17,8 @@ An opinionated template for NodeJS projects that includes, out of the box:
     - Documentation assets upload to public S3 bucket
     - Docker image push to DockerHub
 
-[devops-shield]: https://img.shields.io/azure-devops/build/caiertl/6b8362d8-2849-47c8-8720-1215a3f121c3/3.svg?style=for-the-badge
-[devops-url]: https://dev.azure.com/caiertl/yant/_build
+[devops-shield]: https://img.shields.io/azure-devops/build/caian-org/6b8362d8-2849-47c8-8720-1215a3f121c3/3.svg?style=for-the-badge
+[devops-url]: https://dev.azure.com/caian-org/yant/_build
 
 [codecov-shield]: https://img.shields.io/codecov/c/github/caian-org/yant.svg?style=for-the-badge
 [codecov-url]: https://codecov.io/gh/caian-org/yant
