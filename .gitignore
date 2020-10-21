@@ -1,9 +1,8 @@
 # node.js dependencies folder
 node_modules/*
 
-# instabul (test reports and coverage)
-.nyc_output
-coverage.lcov
+# jest coverage
+coverage
 
 # temporary files & tests
 *.tmp.*
