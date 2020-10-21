@@ -21,7 +21,7 @@ unzip "$artifactObj"
 aws s3 rm --recursive "$s3Bucket"
 
 # upload all files to the bucket
-aws s3 cp --recursive ./docs "$s3Bucket"
+aws s3 cp --recursive ./docs "$s3Bucket" --acl public-read
 
 # configure the bucket to host a static website
 aws s3 website "$s3Bucket" --index-document index.html
