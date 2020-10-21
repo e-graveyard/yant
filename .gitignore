@@ -16,3 +16,6 @@ docs/*
 
 # ctags tags
 tags
+
+# compiled filed
+dist
