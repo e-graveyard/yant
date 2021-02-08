@@ -30,14 +30,20 @@ jobs:
       - task: Bash@3
         inputs:
           targetType: inline
-          script: npm run check
+          script: npm run check:style
         displayName: Check coding style
 
       - task: Bash@3
         inputs:
           targetType: inline
-          script: npm run lint
+          script: npm run check:lint
         displayName: Check linter
+
+      - task: Bash@3
+        inputs:
+          targetType: inline
+          script: npm run flow && npm run check:types
+        displayName: Check types
 
   - job: Test
     pool:
