@@ -10,8 +10,10 @@
     "prettier": "prettier --no-semi --print-width 100 --single-quote --trailing-comma none --write './src/*.js'",
     "standard": "standard --fix",
     "beautify": "npm run prettier && npm run standard",
-    "lint": "eslint src/*.js",
-    "check": "standard",
+    "check:lint": "eslint src/*.js",
+    "check:style": "standard",
+    "check:types": "flow status",
+    "check:all": "npm run check:lint && npm run check:style && npm run check:types",
     "test": "jest --verbose",
     "test:unit": "jest --collect-coverage",
     "coverage:report": "codecov --token=\"$CODECOV_TOKEN\"",
@@ -37,8 +39,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
+      "pre-commit": "npm run check:lint && npm run check:types",
+      "pre-push": "npm run check:all && npm test"
     }
   },
   "nodemonConfig": {
