@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * @module src/calculator
  */
@@ -7,12 +9,14 @@
  * @class
  */
 export class Calculator {
+  result: number
+
   /**
    * Creates a new calculator.
    *
    * @param {number} operand - First operand.
    */
-  constructor (operand) {
+  constructor (operand: number): void {
     this.result = operand
   }
 
@@ -22,7 +26,7 @@ export class Calculator {
    * @param {number} value - The number value to be added.
    * @returns {object} - The class itself object.
    */
-  plus (value) {
+  plus (value: number): this {
     this.result += value
     return this
   }
@@ -33,7 +37,7 @@ export class Calculator {
    * @param {number} value - The number value to be subtracted.
    * @returns {object} - The class itself object.
    */
-  minus (value) {
+  minus (value: number): this {
     this.result -= value
     return this
   }
@@ -44,7 +48,7 @@ export class Calculator {
    * @param {number} value - The number to divide the result.
    * @returns {object} - The class itself object.
    */
-  divided (value) {
+  divided (value: number): this {
     this.result /= value
     return this
   }
@@ -55,7 +59,7 @@ export class Calculator {
    * @param {number} value - The number to multiply the result.
    * @returns {object} - The class itself object.
    */
-  times (value) {
+  times (value: number): this {
     this.result *= value
     return this
   }
@@ -65,7 +69,7 @@ export class Calculator {
    *
    * @returns {number}
    */
-  equals () {
+  equals (): number {
     return this.result
   }
 }
