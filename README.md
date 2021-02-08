@@ -8,11 +8,12 @@ An opinionated template for NodeJS projects that includes, out of the box:
 
 - Unit testing with __Jest__
 - Next generation JS with __Babel__
+- Static type checking with __Flow__
 - Code coverage on __Codecov__
 - __Docker__ image
 - Good-looking API documentation with __JSDoc__
 - CI/CD pipeline on __Azure DevOps__ with:
-    - Linting and style checking
+    - Linting, typing and style checking
     - Test execution and coverage report upload
     - Documentation assets upload to public S3 bucket
     - Docker image push to DockerHub
