@@ -17,6 +17,12 @@
     "coverage:report": "codecov --token=\"$CODECOV_TOKEN\"",
     "docs": "jsdoc -c .jsdoc.json"
   },
+  "standard": {
+    "parser": "babel-eslint",
+    "plugins": [
+      "flowtype"
+    ]
+  },
   "jest": {
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
