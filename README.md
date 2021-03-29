@@ -1,8 +1,8 @@
+[![Build Status][devops-shield]][devops-url] [![Code Coverage][codecov-shield]][codecov-url] [![Code Quality][lgtm-shield]][lgtm-url] [![GitHub tag][tag-shield]][tag-url]
+
 # Yet Another NodeJS Template
 
 <img src="logo.svg" height="210px" align="right"/>
-
-[![Build Status][devops-shield]][devops-url] [![Code Coverage][codecov-shield]][codecov-url] [![Code Quality][lgtm-shield]][lgtm-url]
 
 An opinionated template for NodeJS projects that includes, out of the box:
 
@@ -26,6 +26,9 @@ An opinionated template for NodeJS projects that includes, out of the box:
 
 [lgtm-shield]: https://img.shields.io/lgtm/grade/javascript/g/caian-org/yant.svg?style=for-the-badge
 [lgtm-url]: https://lgtm.com/projects/g/caian-org/yant/context:javascript
+
+[tag-shield]: https://img.shields.io/github/tag/caian-org/yant.svg?style=for-the-badge
+[tag-url]: https://github.com/caian-org/yant/releases
 
 
 ## Who is it for?
