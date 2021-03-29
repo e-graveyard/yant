@@ -97,6 +97,7 @@ jobs:
           targetType: filePath
           filePath: .ci/s3.sh
         env:
+          s3Region: 'us-east-1'
           s3Bucket: s3://yant
           accessKey: '$(awsAccessKeyId)'
           secretKey: '$(awsSecretAccessKey)'
