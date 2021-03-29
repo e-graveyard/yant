@@ -10,6 +10,7 @@ pip3 install awscli --upgrade --user
 export PATH="$PATH:$HOME/.local/bin"
 
 # export the AWS access and secret keys
+export AWS_DEFAULT_REGION="$s3Region"
 export AWS_ACCESS_KEY_ID="$accessKey"
 export AWS_SECRET_ACCESS_KEY="$secretKey"
 
