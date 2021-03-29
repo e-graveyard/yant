@@ -1,6 +1,6 @@
 {
   "name": "yant",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Yet Another NodeJS Template",
   "main": "index.js",
   "scripts": {
