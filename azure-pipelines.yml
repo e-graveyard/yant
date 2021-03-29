@@ -1,5 +1,5 @@
 variables:
-  vmImageName: ubuntu-latest
+  vmImageName: ubuntu-18.04
   docArtifactDir: documentation-assets
   docArtifactObj: 'docs_$(Build.BuildId).zip'
 
