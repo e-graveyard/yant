@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Install pip dependencies
-pip install setuptools wheel
+pip3 install setuptools wheel --upgrade
 
 # install AWS CLI
-pip install awscli --user
+pip3 install awscli --upgrade --user
 
 # make awscli visible on PATH
 export PATH="$PATH:$HOME/.local/bin"
