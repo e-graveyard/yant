@@ -1,4 +1,4 @@
-FROM node:14.16.0-alpine AS base
+FROM node:15.12.0-alpine AS base
 MAINTAINER Caian R. Ertl <hi@caian.org>
 
 RUN addgroup -S alan && adduser -S alan -G alan
