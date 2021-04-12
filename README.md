@@ -1,4 +1,7 @@
-[![Build Status][devops-shield]][devops-url] [![Code Coverage][codecov-shield]][codecov-url] [![Code Quality][lgtm-shield]][lgtm-url] [![GitHub tag][tag-shield]][tag-url]
+[![Build Status][devops-shield]][devops-url]
+[![Code Coverage][codecov-shield]][codecov-url]
+[![Code Quality][lgtm-shield]][lgtm-url]
+[![GitHub tag][tag-shield]][tag-url]
 
 # Yet Another NodeJS Template
 
