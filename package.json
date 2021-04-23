@@ -3,6 +3,16 @@
   "version": "0.3.2",
   "description": "Yet Another NodeJS Template",
   "main": "index.js",
+  "author": "Caian R. Ertl",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caian-org/yant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caian-org/yant/issues"
+  },
+  "homepage": "https://github.com/caian-org/yant#readme",
   "scripts": {
     "start": "node ./dist/index.js",
     "build": "babel -f .babelrc.js src -d dist --copy-files",
@@ -57,16 +67,6 @@
     "template",
     "yant"
   ],
-  "author": "Caian R. Ertl",
-  "license": "CC0-1.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/caian-org/yant.git"
-  },
-  "bugs": {
-    "url": "https://github.com/caian-org/yant/issues"
-  },
-  "homepage": "https://github.com/caian-org/yant#readme",
   "devDependencies": {
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.15",
