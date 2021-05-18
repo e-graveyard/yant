@@ -87,6 +87,7 @@
     "nodemon": "^2.0.7",
     "nyc": "^15.1.0",
     "prettier": "^2.3.0",
-    "standard": "^16.0.3"
+    "standard": "^16.0.3",
+    "vrelease-bin": "^0.3.1"
   }
 }
