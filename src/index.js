@@ -1,5 +1,3 @@
-// @flow
-
 import { Calculator } from './calculator'
 
 /**
@@ -7,7 +5,7 @@ import { Calculator } from './calculator'
  *
  * @param {number} operand - the multiplication number.
  */
-function multiplicationTable (operand: number): void {
+function multiplicationTable (operand) {
   console.log(`Times table of ${operand}:\n`)
 
   for (let i = 1; i <= 10; i++) {
