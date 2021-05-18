@@ -13,13 +13,19 @@
     "url": "https://github.com/caian-org/yant/issues"
   },
   "homepage": "https://github.com/caian-org/yant#readme",
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "template",
+    "yant"
+  ],
   "scripts": {
     "start": "node ./dist/index.js",
     "start:watch": "nodemon",
     "build:js": "babel -f .babelrc.js src -d dist --copy-files",
-    "build:docs": "jsdoc -c .jsdoc.json --verbose && cp icon.svg docs",
+    "build:docs": "jsdoc -c .jsdoc.json --verbose && cp logo.svg docs",
     "fix:style": "prettier --no-semi --print-width 100 --single-quote --trailing-comma none --write './src/*.js' && standard --fix",
-    "check:lint": "eslint src/*.js",
+    "check:lint": "eslint --format=codeframe src/*.js",
     "check:style": "standard",
     "check:all": "npm run check:lint && npm run check:style",
     "test": "jest --verbose",
@@ -54,12 +60,6 @@
     "exec": "npm run build:js && npm start",
     "ext": "js"
   },
-  "keywords": [
-    "javascript",
-    "nodejs",
-    "template",
-    "yant"
-  ],
   "devDependencies": {
     "@alexispuga/jsdoc-template": "^1.1.2",
     "@babel/cli": "^7.14.3",
