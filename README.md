@@ -11,7 +11,6 @@ An opinionated template for NodeJS projects that includes, out of the box:
 
 - Unit testing with __Jest__
 - Next generation JS with __Babel__
-- Static type checking with __Flow__
 - Code coverage on __Codecov__
 - __Docker__ image
 - Good-looking API documentation with __JSDoc__
