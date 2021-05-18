@@ -39,12 +39,6 @@ jobs:
           script: npm run check:lint
         displayName: Check linter
 
-      - task: Bash@3
-        inputs:
-          targetType: inline
-          script: npm run check:types
-        displayName: Check types
-
   - job: Test
     pool:
       vmImage: $(vmImageName)
