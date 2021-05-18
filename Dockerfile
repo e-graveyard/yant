@@ -10,10 +10,7 @@ WORKDIR /home/alan
 
 FROM base AS build
 USER root
-COPY package.json .
-COPY package-lock.json .
-COPY .babelrc.js .
-COPY src src
+COPY . .
 RUN npm install
 RUN npm run build:js
 RUN chown -R alan:alan dist
