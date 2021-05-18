@@ -39,8 +39,12 @@
   "jest": {
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/dist/"
+      "/dist/",
+      "/node_modules/"
+    ],
+    "collectCoverageFrom": [
+      "**/src/**/*.{js,jsx,ts,tsx}",
+      "!src/index.js"
     ],
     "coverageThreshold": {
       "global": {
