@@ -15,18 +15,16 @@
   "homepage": "https://github.com/caian-org/yant#readme",
   "scripts": {
     "start": "node ./dist/index.js",
-    "build": "babel -f .babelrc.js src -d dist --copy-files",
-    "watch": "nodemon",
-    "prettify": "prettier --no-semi --print-width 100 --single-quote --trailing-comma none --write './src/*.js'",
-    "standard": "standard --fix",
-    "fix:style": "npm run prettier && npm run standard",
+    "start:watch": "nodemon",
+    "build:js": "babel -f .babelrc.js src -d dist --copy-files",
+    "build:docs": "jsdoc -c .jsdoc.json --verbose",
+    "fix:style": "prettier --no-semi --print-width 100 --single-quote --trailing-comma none --write './src/*.js' && standard --fix",
     "check:lint": "eslint src/*.js",
     "check:style": "standard",
     "check:all": "npm run check:lint && npm run check:style",
     "test": "jest --verbose",
     "test:unit": "jest --collect-coverage",
-    "coverage:report": "codecov --token=\"$CODECOV_TOKEN\"",
-    "docs": "jsdoc -c .jsdoc.json",
+    "coverage": "codecov --token=\"$CODECOV_TOKEN\"",
     "prepare": "[ \"$NODE_ENV\" == \"production\" ] && exit 0; husky install"
   },
   "standard": {
@@ -53,7 +51,7 @@
     "watch": [
       "src"
     ],
-    "exec": "npm run build && npm start",
+    "exec": "npm run build:js && npm start",
     "ext": "js"
   },
   "keywords": [
@@ -63,17 +61,18 @@
     "yant"
   ],
   "devDependencies": {
+    "@alexispuga/jsdoc-template": "^1.1.2",
     "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",
     "@babel/eslint-parser": "^7.14.3",
     "@babel/plugin-transform-modules-commonjs": "^7.14.0",
     "@babel/preset-env": "^7.14.2",
+    "@types/jest": "^26.0.23",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "codecov": "^3.8.2",
     "husky": "^6.0.0",
-    "ink-docstrap": "^1.3.2",
     "jest": "^26.6.3",
     "jsdoc": "^3.6.7",
     "nodemon": "^2.0.7",
