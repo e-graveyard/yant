@@ -15,7 +15,7 @@ COPY package-lock.json .
 COPY .babelrc.js .
 COPY src src
 RUN npm install
-RUN npm run build
+RUN npm run build:js
 RUN chown -R alan:alan dist
 
 FROM base AS dependencies

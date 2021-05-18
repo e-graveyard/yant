@@ -12,7 +12,7 @@ steps:
     - script: npm run test:unit
       displayName: Run unit tests with coverage
 
-    - script: npm run coverage:report
+    - script: npm run coverage
       env:
         CODECOV_TOKEN: ${{ parameters.codecovToken }}
       displayName: Upload report to Codecov
