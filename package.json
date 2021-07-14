@@ -27,7 +27,8 @@
     "fix:style": "prettier --no-semi --print-width 100 --single-quote --trailing-comma none --write './src/*.js' && standard --fix",
     "check:lint": "eslint --format=codeframe src/*.js",
     "check:style": "standard",
-    "check:all": "npm run check:lint && npm run check:style",
+    "check:duplicated": "jscpd src",
+    "check:all": "npm run check:lint && npm run check:style && npm run check:duplicated",
     "test": "jest --verbose",
     "test:unit": "jest --collect-coverage",
     "coverage": "codecov --token=\"$CODECOV_TOKEN\"",
@@ -35,6 +36,20 @@
   },
   "standard": {
     "parser": "babel-eslint"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "npm run fix:style"
+    ]
+  },
+  "jscpd": {
+    "threshold": 5,
+    "reporters": [
+      "html",
+      "console"
+    ],
+    "absolute": true,
+    "gitignore": true
   },
   "jest": {
     "testEnvironment": "node",
@@ -78,7 +93,9 @@
     "codecov": "^3.8.2",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
+    "jscpd": "^3.3.26",
     "jsdoc": "^3.6.7",
+    "lint-staged": "^11.0.1",
     "nodemon": "^2.0.12",
     "nyc": "^15.1.0",
     "prettier": "^2.3.2",
