@@ -1,9 +1,9 @@
 {
   "name": "yant",
-  "version": "0.3.2",
+  "version": "1.0.2",
   "description": "Yet Another NodeJS Template",
-  "main": "index.js",
-  "author": "Caian R. Ertl",
+  "main": "dist/index.js",
+  "author": "Caian Ertl <hi@caian.org>",
   "license": "CC0-1.0",
   "repository": {
     "type": "git",
@@ -20,11 +20,11 @@
     "yant"
   ],
   "scripts": {
-    "start": "node ./dist/index.js",
+    "start": "node dist/index.js",
     "start:watch": "nodemon",
     "build:js": "babel -f .babelrc.js src -d dist --copy-files",
     "build:docs": "jsdoc -c .jsdoc.json --verbose && cp logo.svg docs",
-    "fix:style": "prettier --no-semi --print-width 100 --single-quote --trailing-comma none --write './src/*.js' && standard --fix",
+    "fix:style": "prettier --no-semi --print-width 100 --single-quote --trailing-comma none --write 'src/*.js' && standard --fix",
     "check:lint": "eslint --format=codeframe src/*.js",
     "check:style": "standard",
     "check:duplicated": "jscpd src",
