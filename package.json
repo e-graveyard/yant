@@ -24,21 +24,27 @@
     "start:watch": "nodemon",
     "build:js": "babel -f .babelrc.js src -d dist --copy-files",
     "build:docs": "jsdoc -c .jsdoc.json --verbose && cp logo.svg docs",
-    "fix:style": "prettier --no-semi --print-width 100 --single-quote --trailing-comma none --write 'src/*.js' && standard --fix",
-    "check:lint": "eslint --format=codeframe src/*.js",
+    "fix:style": "npm run prettier && standard --fix '**/*.js'",
+    "check:lint": "eslint --format=codeframe '**/*.js'",
     "check:style": "standard",
-    "check:duplicated": "jscpd src",
+    "check:duplicated": "jscpd",
     "check:all": "npm run check:lint && npm run check:style && npm run check:duplicated",
     "test": "jest --verbose",
     "test:unit": "jest --collect-coverage",
     "coverage": "codecov --token=\"$CODECOV_TOKEN\"",
+    "prettier": "prettier --no-semi --print-width 100 --single-quote --trailing-comma none --write '**/*.js'",
     "prepare": "[ \"$NODE_ENV\" == \"production\" ] && exit 0; husky install"
   },
   "standard": {
     "parser": "@babel/eslint-parser"
   },
+  "eslintIgnore": [
+    "dist",
+    "docs",
+    "report"
+  ],
   "lint-staged": {
-    "src/**/*.js": [
+    "**/*.js": [
       "npm run fix:style"
     ]
   },
@@ -49,7 +55,10 @@
       "console"
     ],
     "absolute": true,
-    "gitignore": true
+    "gitignore": true,
+    "ignore": [
+      "**/dist/**"
+    ]
   },
   "jest": {
     "testEnvironment": "node",
