@@ -6,10 +6,10 @@ module.exports = {
       '@babel/preset-env',
       {
         targets: {
-          esmodules: true,
-        },
-      },
-    ],
+          esmodules: true
+        }
+      }
+    ]
   ],
   plugins: [
     '@babel/plugin-transform-modules-commonjs',
@@ -19,10 +19,10 @@ module.exports = {
       {
         root: [path.resolve('./')],
         alias: {
-          '@yant': './src',
+          '@yant': './src'
         }
-      },
+      }
     ]
     /* end */
-  ],
+  ]
 }
