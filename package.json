@@ -110,5 +110,8 @@
     "prettier": "^2.3.2",
     "standard": "^16.0.3",
     "vrelease-bin": "^0.3.1"
+  },
+  "dependencies": {
+    "winston": "^3.3.3"
   }
 }
