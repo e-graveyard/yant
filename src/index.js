@@ -1,4 +1,7 @@
-import { Calculator } from './calculator'
+import Calculator from '@yant/Calculator'
+import Logger from '@yant/lib/Logger'
+
+const logger = new Logger({ isDev: true, label: 'yatt' })
 
 /**
  * Repeats a given callback function N times.
@@ -14,13 +17,14 @@ const each = (n, cb) => Array.from(Array(n).keys()).forEach(cb)
  * @param {number} operand - the multiplication number.
  */
 function multiplicationTable (operand) {
-  console.log(`\nTimes table of ${operand}:\n`)
+  logger.warn('-'.repeat(30))
+  logger.warn(`Times table of ${operand}:`)
 
   each(10, (_, i) => {
     const iter = i + 1
     const result = new Calculator(iter).times(operand).equals()
 
-    console.log(`${iter} x ${operand} = ${result}`)
+    logger.info(`${iter} x ${operand} = ${result}`)
   })
 }
 

@@ -1,15 +1,14 @@
 /**
- * @module src/calculator
+ * @module src/Calculator
  */
 
 /**
  * Calculator with basic operations.
  * @class
  */
-export class Calculator {
+export default class {
   /**
    * Creates a new calculator.
-   *
    * @param {number} operand - First operand.
    */
   constructor (operand) {
@@ -18,7 +17,6 @@ export class Calculator {
 
   /**
    * Adds a value to the current result.
-   *
    * @param {number} value - The number value to be added.
    * @returns {object} - The class itself object.
    */
@@ -29,7 +27,6 @@ export class Calculator {
 
   /**
    * Subtracts a value to the current result.
-   *
    * @param {number} value - The number value to be subtracted.
    * @returns {object} - The class itself object.
    */
@@ -40,7 +37,6 @@ export class Calculator {
 
   /**
    * Divides the result by a given value.
-   *
    * @param {number} value - The number to divide the result.
    * @returns {object} - The class itself object.
    */
@@ -51,7 +47,6 @@ export class Calculator {
 
   /**
    * Multiplies the result by a given value.
-   *
    * @param {number} value - The number to multiply the result.
    * @returns {object} - The class itself object.
    */
@@ -62,7 +57,6 @@ export class Calculator {
 
   /**
    * Finishes the calculation and returns the final result.
-   *
    * @returns {number}
    */
   equals () {
