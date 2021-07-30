@@ -7,7 +7,7 @@ const logger = new Logger({ isDev: true, label: 'yatt' })
  * Repeats a given callback function N times.
  *
  * @param {number} n - the amount of times to repeat.
- * @param {number} cb - the callback function.
+ * @param {function} cb - the callback function.
  */
 const each = (n, cb) => Array.from(Array(n).keys()).forEach(cb)
 
