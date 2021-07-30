@@ -14,8 +14,10 @@ export default class {
    * @param {object} config - Configuration with "isDev" flag and log "label".
    */
   constructor (config) {
-    this.isDev = Boolean(config.isDev)
-    this.label = config.label ?? ''
+    const { isDev, label } = config || {}
+
+    this.isDev = Boolean(isDev)
+    this.label = label ?? ''
     this.logger = createLogger({ transports: [this.createConsoleLogger()] })
   }
 
