@@ -1,6 +1,6 @@
 /* globals describe it expect */
 
-import { Calculator } from '../src/calculator'
+import Calculator from '@yant/Calculator'
 
 describe('Calculator:', () => {
   it('Should sum two values', () => {
