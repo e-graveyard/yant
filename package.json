@@ -36,6 +36,7 @@
     "test": "jest --verbose --collect-coverage",
     "test:cov": "npm test && codecov --token=\"$CODECOV_TOKEN\"",
     "clean": "rm -rf coverage dist docs report",
+    "commit": "cz",
     "prepare": "[ \"$NODE_ENV\" == \"production\" ] && exit 0; husky install"
   },
   "standard": {
@@ -102,6 +103,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "codecov": "^3.8.3",
     "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.2.0",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
     "jscpd": "^3.3.26",
@@ -116,5 +118,10 @@
   },
   "dependencies": {
     "winston": "^3.3.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
