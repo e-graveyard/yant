@@ -1,6 +1,7 @@
 [![Build Status][devops-shield]][devops-url]
 [![Code Coverage][codecov-shield]][codecov-url]
 [![Code Quality][lgtm-shield]][lgtm-url]
+[![Docker Image Size][docker-img-size-shield]][docker-url]
 [![GitHub tag][tag-shield]][tag-url]
 
 # Yet Another NodeJS Template
@@ -28,6 +29,9 @@ An opinionated template for NodeJS projects that includes, out of the box:
 
 [lgtm-shield]: https://img.shields.io/lgtm/grade/javascript/g/caian-org/yant.svg?logo=lgtm&style=flat-square
 [lgtm-url]: https://lgtm.com/projects/g/caian-org/yant/context:javascript
+
+[docker-img-size-shield]: https://img.shields.io/docker/image-size/caian/yant?sort=semver&logo=docker&logoColor=FFF&style=flat-square
+[docker-url]: https://hub.docker.com/r/caian/yant
 
 [tag-shield]: https://img.shields.io/github/tag/caian-org/yant.svg?logo=git&logoColor=FFF&style=flat-square
 [tag-url]: https://github.com/caian-org/yant/releases
