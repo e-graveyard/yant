@@ -18,8 +18,9 @@ An opinionated template for NodeJS projects that includes, out of the box:
 - CI/CD pipeline on __Azure DevOps__ with:
     - Linting, style and code duplication checking
     - Test execution and coverage report upload
-    - Documentation assets upload to public S3 bucket
     - Docker image build and push to DockerHub
+
+The API documentation live preview is available at [yant.pages.dev](https://yant.pages.dev).
 
 [devops-shield]: https://img.shields.io/azure-devops/build/caian-org/6b8362d8-2849-47c8-8720-1215a3f121c3/3.svg?logo=azure-pipelines&style=flat-square
 [devops-url]: https://dev.azure.com/caian-org/yant/_build
@@ -39,8 +40,8 @@ An opinionated template for NodeJS projects that includes, out of the box:
 
 ## How can I use it?
 
-Simply put: take what suits you, ignore or change what you do not like, and
-apply according to his will.
+Take what suits you, ignore or change what you do not like, and apply according
+to his will.
 
 
 ## License

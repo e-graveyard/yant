@@ -1,6 +1,6 @@
 parameters:
   # the used version of the nodejs runtime
-  nodeJsVersion: '10.x'
+  nodeJsVersion: '16.x'
 
   # should only production nodejs modules be installed?
   # possible options: 'true', 'false'
