@@ -1,6 +1,6 @@
 {
   "name": "yant",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Yet Another NodeJS Template",
   "main": "dist/index.js",
   "author": "Caian Ertl <hi@caian.org>",
