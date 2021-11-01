@@ -1,6 +1,6 @@
 parameters:
   # the used version of the nodejs runtime
-  nodeJsVersion: '16.x'
+  version: '16.13' # latest LTS
 
   # should only production nodejs modules be installed?
   # possible options: 'true', 'false'
@@ -10,7 +10,7 @@ parameters:
 steps:
   - task: NodeTool@0
     inputs:
-      versionSpec: ${{ parameters.nodeJsVersion }}
+      versionSpec: ${{ parameters.version }}
     displayName: Install NodeJS
 
   - ${{ if eq(parameters.onlyProduction, 'true') }}:

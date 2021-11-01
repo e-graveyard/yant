@@ -2,6 +2,12 @@ variables:
   vmImageName: ubuntu-18.04
 
 
+parameters:
+  - name: nodeJsVersions
+    type: object
+    default: ['12.22', '14.18', '16.13']
+
+
 trigger:
   branches:
     include:
@@ -18,17 +24,21 @@ trigger:
 
 
 jobs:
-  - job: Validation
-    pool:
-      vmImage: $(vmImageName)
-    steps:
-      - template: .ci/templates/node-with-modules.yml
+  - ${{ each v in parameters.nodeJsVersions }}:
+    - job:
+      displayName: Validation (NodeJS ${{ v }})
+      pool:
+        vmImage: $(vmImageName)
+      steps:
+        - template: .ci/templates/node-with-modules.yml
+          parameters:
+            version: ${{ v }}
 
-      - task: Bash@3
-        inputs:
-          targetType: inline
-          script: npm run all
-        displayName: Run all scripts
+        - task: Bash@3
+          inputs:
+            targetType: inline
+            script: npm run all
+          displayName: Run all scripts
 
   - job: Test
     pool:
@@ -44,7 +54,6 @@ jobs:
     pool:
       vmImage: $(vmImageName)
     dependsOn:
-      - Validation
       - Test
     condition: |
       and
