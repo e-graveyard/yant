@@ -38,6 +38,13 @@ The API documentation live preview is available at [yant.pages.dev](https://yant
 [tag-url]: https://github.com/caian-org/yant/releases
 
 
+## Compatibility
+
+Any version above `12.x` is okay: `yant` is tested against the latest three
+NodeJS LTS versions (`12.22`, `14.18` and `16.13`) and the most recent
+available (`>= 17`).
+
+
 ## How can I use it?
 
 Take what suits you, ignore or change what you do not like, and apply according

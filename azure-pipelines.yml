@@ -5,7 +5,7 @@ variables:
 parameters:
   - name: nodeJsVersions
     type: object
-    default: ['12.22', '14.18', '16.13']
+    default: ['12.22', '14.18', '16.13', '17']
 
 
 trigger:
