@@ -20,7 +20,7 @@ An opinionated template for NodeJS projects that includes, out of the box:
     - Test execution and coverage report upload
     - Docker image build and push to DockerHub
 
-The API documentation live preview is available at [yant.pages.dev](https://yant.pages.dev).
+The API documentation live preview is available at [yant.upsetbit.co](https://yant.upsetbit.co).
 
 [devops-shield]: https://img.shields.io/azure-devops/build/caian-org/6b8362d8-2849-47c8-8720-1215a3f121c3/3.svg?logo=azure-pipelines&style=flat-square
 [devops-url]: https://dev.azure.com/caian-org/yant/_build
