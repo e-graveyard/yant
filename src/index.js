@@ -1,7 +1,7 @@
 import Calculator from '@yant/Calculator'
 import Logger from '@yant/lib/Logger'
 
-const logger = new Logger({ isDev: true, label: 'yatt' })
+const logger = new Logger({ isDev: true, label: 'yant' })
 
 /**
  * Repeats a given callback function N times.
