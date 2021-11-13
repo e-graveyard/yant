@@ -105,6 +105,8 @@
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
     "husky": "^7.0.4",
     "jest": "^27.3.1",
     "jscpd": "^3.4.2",
