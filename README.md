@@ -1,4 +1,4 @@
-[![Build Status][devops-shield]][devops-url]
+[![Tests][gh-tc-shield]][gh-tc-url]
 [![Code Coverage][codecov-shield]][codecov-url]
 [![Code Quality][lgtm-shield]][lgtm-url]
 [![Docker Image Size][docker-img-size-shield]][docker-url]
@@ -15,15 +15,16 @@ An opinionated template for NodeJS projects that includes, out of the box:
 - Code coverage on __Codecov__
 - __Docker__ image
 - Good-looking API documentation with __JSDoc__
-- CI/CD pipeline on __Azure DevOps__ with:
+- CI/CD pipeline on __GitHub Actions__ with:
+    - Node modules caching for faster pipelines
     - Linting, style and code duplication checking
     - Test execution and coverage report upload
     - Docker image build and push to DockerHub
 
 The API documentation live preview is available at [yant.upsetbit.co](https://yant.upsetbit.co).
 
-[devops-shield]: https://img.shields.io/azure-devops/build/caian-org/6b8362d8-2849-47c8-8720-1215a3f121c3/3.svg?logo=azure-pipelines&style=flat-square
-[devops-url]: https://dev.azure.com/caian-org/yant/_build
+[gh-tc-shield]: https://img.shields.io/github/workflow/status/caian-org/yant/run-tests-and-upload-coverage?label=tests&logo=github&style=flat-square
+[gh-tc-url]: https://github.com/caian-org/yant/actions/workflows/test-with-cov.yml
 
 [codecov-shield]: https://img.shields.io/codecov/c/github/caian-org/yant.svg?logo=codecov&logoColor=FFF&style=flat-square
 [codecov-url]: https://codecov.io/gh/caian-org/yant
