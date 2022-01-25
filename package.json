@@ -1,6 +1,6 @@
 {
   "name": "yant",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Yet Another NodeJS Template",
   "main": "dist/index.js",
   "author": "Caian Ertl <hi@caian.org>",
@@ -20,7 +20,7 @@
     "yant"
   ],
   "scripts": {
-    "all": "npm run build:js && npm run build:docs && npm run fix:style && npm run check:all && npm test && npm start && npm run clean",
+    "all": "npm run build:js && npm run build:docs && npm run check:all && npm test && npm run clean",
     "start": "node dist/index.js",
     "start:watch": "nodemon",
     "build:js": "babel -f .babelrc.js src -d dist --copy-files",
@@ -88,6 +88,11 @@
     "exec": "npm run build:js && npm start",
     "ext": "js"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "devDependencies": {
     "@alexispuga/jsdoc-template": "^1.1.2",
     "@babel/cli": "^7.16.8",
@@ -119,10 +124,5 @@
   },
   "dependencies": {
     "winston": "^3.4.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
