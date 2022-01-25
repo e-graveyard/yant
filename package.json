@@ -34,7 +34,6 @@
     "check:all": "npm run check:lint && npm run check:style && npm run check:duplicated",
     "fix:style": "prettier --no-semi --print-width 100 --single-quote --trailing-comma none --write '**/*.js' && standard --fix '**/*.js'",
     "test": "jest --verbose --collect-coverage",
-    "test:cov": "npm test && codecov --token=\"$CODECOV_TOKEN\"",
     "clean": "rm -rf coverage dist docs report",
     "commit": "cz",
     "prepare": "[ \"$NODE_ENV\" == \"production\" ] && exit 0; husky install"
@@ -91,36 +90,35 @@
   },
   "devDependencies": {
     "@alexispuga/jsdoc-template": "^1.1.2",
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/eslint-parser": "^7.16.3",
-    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.12",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
     "@commitlint/cli": "^13.2.1",
     "@commitlint/config-conventional": "^13.2.0",
-    "@types/jest": "^27.0.2",
-    "babel-jest": "^27.3.1",
+    "@types/jest": "^27.4.0",
+    "babel-jest": "^27.4.6",
     "babel-plugin-module-resolver": "^4.1.0",
-    "codecov": "^3.8.3",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-import": "^2.25.4",
     "husky": "^7.0.4",
-    "jest": "^27.3.1",
-    "jscpd": "^3.4.2",
-    "jsdoc": "^3.6.7",
+    "jest": "^27.4.7",
+    "jscpd": "^3.4.5",
+    "jsdoc": "^3.6.10",
     "lint-staged": "^11.2.6",
     "nodemon": "^2.0.15",
     "npm-check-updates": "^11.8.5",
     "nyc": "^15.1.0",
-    "prettier": "^2.4.1",
+    "prettier": "^2.5.1",
     "standard": "^16.0.4",
-    "vrelease-bin": "^0.3.1"
+    "vrelease-bin": "^0.3.2"
   },
   "dependencies": {
-    "winston": "^3.3.3"
+    "winston": "^3.4.0"
   },
   "config": {
     "commitizen": {
