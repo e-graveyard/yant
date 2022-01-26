@@ -21,7 +21,12 @@ An opinionated template for NodeJS projects that includes, out of the box:
     - Test execution and coverage report upload
     - Docker image build and push to DockerHub
 
-The API documentation live preview is available at [yant.upsetbit.co](https://yant.upsetbit.co).
+For a slimmer version -- simpler and with less dependencies -- see
+[`yant-slim`][yant-slim]. The API documentation live preview is available at
+[yant.upsetbit.co][yant-docs].
+
+[yant-slim]: https://github.com/caian-org/yant-slim
+[yant-docs]: https://yant.upsetbit.co
 
 [gh-tc-shield]: https://img.shields.io/github/workflow/status/caian-org/yant/run-tests-and-upload-coverage?label=tests&logo=github&style=flat-square
 [gh-tc-url]: https://github.com/caian-org/yant/actions/workflows/test-with-cov.yml
