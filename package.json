@@ -123,6 +123,6 @@
     "vrelease-bin": "^0.3.2"
   },
   "dependencies": {
-    "winston": "^3.4.0"
+    "winston": "^3.5.0"
   }
 }
