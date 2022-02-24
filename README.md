@@ -13,7 +13,8 @@ An opinionated template for NodeJS projects that includes, out of the box:
 - Next generation JS with __Babel__
 - Unit testing with __Jest__
 - Code coverage on __Codecov__
-- __Docker__ image
+- Container-ready with __Docker__
+- Efficient dependency management with __pnpm__
 - Good-looking API documentation with __JSDoc__
 - CI/CD pipeline on __GitHub Actions__ with:
     - Node modules caching for faster pipelines
@@ -47,7 +48,7 @@ For a slimmer version -- simpler and with less dependencies -- see
 ## Compatibility
 
 Any version above `12.x` is okay: `yant` is tested against the latest three
-NodeJS LTS versions (`12.22`, `14.18` and `16.13`) and the most recent
+NodeJS LTS versions (`12.x`, `14.x` and `16.x`) and the most recent
 available (`>= 17`).
 
 
