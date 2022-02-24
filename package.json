@@ -1,6 +1,6 @@
 {
   "name": "yant",
-  "version": "2.4.0",
+  "version": "3.0.0",
   "description": "Yet Another NodeJS Template",
   "main": "dist/index.js",
   "author": "Caian Ertl <hi@caian.org>",
@@ -20,18 +20,18 @@
     "yant"
   ],
   "scripts": {
-    "all": "npm run build:js && npm run build:docs && npm run check:all && npm test && npm run clean",
+    "all": "pnpm run build:js && pnpm run build:docs && pnpm run check:all && pnpm test && pnpm run clean",
     "start": "node dist/index.js",
     "start:watch": "nodemon",
     "build:js": "babel -f .babelrc.js src -d dist --copy-files",
     "build:docs": "jsdoc -c .jsdoc.json --verbose && cp logo.svg docs",
     "bump:dev": "ncu --upgrade --dep dev --target minor",
     "bump:prod": "ncu --upgrade --dep prod --target minor",
-    "bump:all": "npm run bump:dev && npm run bump:prod",
+    "bump:all": "pnpm run bump:dev && pnpm run bump:prod",
     "check:lint": "eslint --format=codeframe '**/*.js'",
     "check:style": "standard",
     "check:duplicated": "jscpd",
-    "check:all": "npm run check:lint && npm run check:style && npm run check:duplicated",
+    "check:all": "pnpm run check:lint && pnpm run check:style && pnpm run check:duplicated",
     "fix:style": "prettier --no-semi --print-width 100 --single-quote --trailing-comma none --write '**/*.js' && standard --fix '**/*.js'",
     "test": "jest --verbose --collect-coverage",
     "clean": "rm -rf coverage dist docs report",
@@ -48,7 +48,7 @@
   ],
   "lint-staged": {
     "**/*.js": [
-      "npm run fix:style"
+      "pnpm run fix:style"
     ]
   },
   "jscpd": {
@@ -85,7 +85,7 @@
     "watch": [
       "src"
     ],
-    "exec": "npm run build:js && npm start",
+    "exec": "pnpm run build:js && pnpm start",
     "ext": "js"
   },
   "config": {
