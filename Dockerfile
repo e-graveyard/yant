@@ -1,41 +1,43 @@
-FROM node:16.13.0-alpine AS base
-MAINTAINER Caian R. Ertl <hi@caian.org>
+FROM node:16-alpine AS base
+LABEL maintainer="Caian Ertl <hi@caian.org>"
 
-RUN npm i -g npm@latest
-RUN addgroup -S turing && adduser -S turing -G turing
-RUN mkdir -p /home/turing
-RUN chown turing:turing /home/turing
+RUN addgroup -S turing && adduser -S turing -G turing \
+    && mkdir -p /home/turing \
+    && chown turing:turing /home/turing
 USER turing
-WORKDIR /home/turing
 
+# ...
 FROM base AS package
-USER root
+WORKDIR /home/turing
 COPY package.json .
-COPY package-lock.json .
+COPY pnpm-lock.yaml .
 
-FROM package AS dev-deps
-RUN npm i
+# ...
+FROM package as bin
+USER root
+RUN npm i -g pnpm@latest \
+    && apk add --no-cache curl \
+    && curl -sf https://gobinaries.com/tj/node-prune | sh
+USER turing
 
-FROM package AS prod-deps
-RUN apk add --no-cache curl
-RUN curl -sf https://gobinaries.com/tj/node-prune | sh
-RUN NODE_ENV="production" npm i --only=production
+# ...
+FROM bin AS dev-deps
+RUN pnpm i
+
+# ...
+FROM bin AS prod-deps
+RUN NODE_ENV="production" pnpm i
 RUN node-prune
-RUN chown -R turing:turing node_modules package.json package-lock.json
 
+# ...
 FROM dev-deps AS build
 COPY src src
 COPY .babelrc.js .
-RUN npm run build:js
-RUN chown -R turing:turing dist
+RUN pnpm run build:js
 
-FROM package AS dependencies
-RUN export NODE_ENV="production"
-RUN npm install --only=production
-RUN chown -R turing:turing node_modules
-
+# ...
 FROM package AS run
-USER turing
-COPY --from=prod-deps ["/home/turing/node_modules", "./node_modules"]
-COPY --from=build ["/home/turing/dist", "./dist"]
-ENTRYPOINT ["npm", "start"]
+COPY --from=prod-deps ["/home/turing/.pnpm-store", ".pnpm-store"]
+COPY --from=prod-deps ["/home/turing/node_modules", "node_modules"]
+COPY --from=build ["/home/turing/dist", "dist"]
+ENTRYPOINT ["node", "dist"]
