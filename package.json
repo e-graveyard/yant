@@ -118,7 +118,7 @@
     "npm-check-updates": "^12.5.9",
     "nyc": "^15.1.0",
     "prettier": "^2.6.2",
-    "standard": "^16.0.4",
+    "standard": "^17.0.0",
     "vrelease-bin": "^0.3.2"
   },
   "dependencies": {
