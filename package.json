@@ -103,7 +103,7 @@
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@types/jest": "^27.4.1",
-    "babel-jest": "^27.5.1",
+    "babel-jest": "^28.1.0",
     "babel-plugin-module-resolver": "^4.1.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
